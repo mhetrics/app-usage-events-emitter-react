@@ -2,7 +2,7 @@
   "name": "app-usage-events-emitter-react",
   "author": "mhetrics",
   "description": "A set of types, type checks, and type guards for simpler, safer, and easier to read code.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "mhetrics/app-usage-events-emitter-react",
   "homepage": "https://github.com/mhetrics/app-usage-events-emitter-react",
   "keywords": [
