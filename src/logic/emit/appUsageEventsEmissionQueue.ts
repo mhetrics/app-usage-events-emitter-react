@@ -29,17 +29,20 @@ export const appUsageEventsEmissionQueue =
     },
   });
 
+const isNoisySource = (source: AppUsageEventSource) =>
+  [
+    // skip logging noisy event sources
+    AppUsageEventSource.NETWORK,
+    AppUsageEventSource.ACTIVITY,
+  ].includes(source);
+
 // also, log out when events are added
 appUsageEventsEmissionQueue.on.push.subscribe({
   consumer: ({ event: { items } }) =>
-    [
-      // skip logging noisy event sources
-      AppUsageEventSource.NETWORK,
-      AppUsageEventSource.ACTIVITY,
-    ].includes(items[0]!.source)
-      ? null
-      : console.log(
+    (window as any)?.aue?.log === true && !isNoisySource(items[0]?.source)
+      ? console.log(
           APP_USAGE_EVENTS_EMISSION_LOG_FIRST_ARG,
           JSON.stringify(pick(items[0]!, ['source', 'type', 'details'])),
-        ),
+        )
+      : null,
 });
