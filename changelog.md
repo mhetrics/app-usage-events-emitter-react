@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.3...v1.1.4) (2023-07-25)
+
+
+### Bug Fixes
+
+* **logs:** dont log to console unless asked to ([675938f](https://github.com/mhetrics/app-usage-events-react/commit/675938fad3a02f30964cc1ebeec17956bb1f4236))
+
 ## [1.1.3](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.2...v1.1.3) (2023-07-25)
 
 
