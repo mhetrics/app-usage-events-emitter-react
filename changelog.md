@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.0...v1.1.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* **practs:** bump best practs for faster cicd ([b9a26fe](https://github.com/mhetrics/app-usage-events-react/commit/b9a26fe8c1152a4c42e082788beae7807c895323))
+
 ## [1.1.0](https://github.com/mhetrics/app-usage-events-emitter-react/compare/v1.0.1...v1.1.0) (2023-07-25)
 
 
