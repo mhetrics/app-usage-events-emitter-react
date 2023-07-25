@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.2...v1.1.3) (2023-07-25)
+
+
+### Bug Fixes
+
+* **pkg:** add back the registry-url parameter to package-publish ([28e8ad9](https://github.com/mhetrics/app-usage-events-react/commit/28e8ad958a32773979955235f65af14400f1595d))
+
 ## [1.1.2](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.1...v1.1.2) (2023-07-25)
 
 
