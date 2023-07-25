@@ -1,28 +1,6 @@
-import { createQueueWithResilientRemoteConsumer } from 'simple-in-memory-queue';
-
 import { AppUsageEvent, AppUsageEventSource } from '../../domain/AppUsageEvent';
+import { waitForApplicationOfSession } from '../session/getApplicationOfSession';
 import { captureAppUsageEvent } from './captureAppUsageEvent';
-
-const observationCaptureQueue = createQueueWithResilientRemoteConsumer<{
-  type: string;
-  details: AppUsageEvent['details'];
-}>({
-  consumer: async ({ item }) => {
-    await captureAppUsageEvent({
-      source: AppUsageEventSource.OBSERVATION,
-      type: item.type,
-      details: item.details,
-    });
-  },
-  threshold: {
-    concurrency: 1,
-    retry: 5,
-    pause: 10,
-  },
-  delay: {
-    retry: 300,
-  },
-});
 
 /**
  * enables programmatically capturing an observation that will be emitted as an app usage event
@@ -43,5 +21,10 @@ export const captureObservationEvent = async ({
   details: AppUsageEvent['details'];
 }) => {
   if (typeof window === 'undefined') return; // do nothing on serverside, since no installation-uuid available
-  await observationCaptureQueue.push({ type, details });
+  await waitForApplicationOfSession();
+  await captureAppUsageEvent({
+    source: AppUsageEventSource.OBSERVATION,
+    type,
+    details,
+  });
 };
