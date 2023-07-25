@@ -6,6 +6,11 @@ import { appUsageEventsEmissionQueue } from '../emit/appUsageEventsEmissionQueue
 import { captureSessionLastUsedAt } from '../session/captureSessionLastUsedAt';
 import { findOrCreateAppUsageSession } from '../session/findOrCreateAppUsageSession';
 
+const isAutocapturedSource = (source: AppUsageEventSource) =>
+  ![AppUsageEventSource.OBSERVATION, AppUsageEventSource.DOMAIN].includes(
+    source,
+  );
+
 /**
  * a simple method for capturing an app usage event
  */
@@ -21,13 +26,16 @@ export const captureAppUsageEvent = async ({
   // get the session uuid
   const { uuid: sessionUuid } = await findOrCreateAppUsageSession();
 
-  // validate that the type of the event is prefixed by the source
+  // validate that the type of the event is prefixed by the source, for our autocaptured sources
   const prefixExpected = `${source.toLowerCase()}.`;
-  if (!type.startsWith(prefixExpected))
-    throw new UnexpectedCodePathError(
+  if (isAutocapturedSource(source) && !type.startsWith(prefixExpected)) {
+    const error = new UnexpectedCodePathError(
       'captureAppUsageEvent expects type to be prefixed with source',
       { type, prefixExpected },
     );
+    console.warn('AUE', 'could not capture app usage event', error);
+    throw error;
+  }
 
   // create the event
   const event = new AppUsageEvent({
