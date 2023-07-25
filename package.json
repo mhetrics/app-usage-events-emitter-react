@@ -1,10 +1,10 @@
 {
-  "name": "app-usage-events-emitter-react",
+  "name": "app-usage-events-react",
   "author": "mhetrics",
   "description": "A set of types, type checks, and type guards for simpler, safer, and easier to read code.",
   "version": "1.0.1",
-  "repository": "mhetrics/app-usage-events-emitter-react",
-  "homepage": "https://github.com/mhetrics/app-usage-events-emitter-react",
+  "repository": "mhetrics/app-usage-events-react",
+  "homepage": "https://github.com/mhetrics/app-usage-events-react",
   "keywords": [
     "types",
     "type guards",
@@ -15,7 +15,7 @@
     "checking",
     "typescript"
   ],
-  "bugs": "https://github.com/mhetrics/app-usage-events-emitter-react/issues",
+  "bugs": "https://github.com/mhetrics/app-usage-events-react/issues",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8.0.0"
