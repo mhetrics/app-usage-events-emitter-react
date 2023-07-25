@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.4...v1.1.5) (2023-07-25)
+
+
+### Bug Fixes
+
+* **perf:** wait for application session instead of queuing to resilient queue ([92405eb](https://github.com/mhetrics/app-usage-events-react/commit/92405eb4eca7b0c7f00b7ef0a5588c5fac15b564))
+
 ## [1.1.4](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.3...v1.1.4) (2023-07-25)
 
 
