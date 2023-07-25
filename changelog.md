@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/mhetrics/app-usage-events-emitter-react/compare/v1.0.1...v1.1.0) (2023-07-25)
+
+
+### Features
+
+* **observation:** add capture observation event method ([9b820e6](https://github.com/mhetrics/app-usage-events-emitter-react/commit/9b820e63b703811fe1446110db6a56fa592f9bad))
+
+
+### Bug Fixes
+
+* **name:** rename package to drop emitter suffix ([0666dbb](https://github.com/mhetrics/app-usage-events-emitter-react/commit/0666dbbaa3558011a8ed26ba8e39cd39132d37ab))
+
 ## [1.0.1](https://github.com/mhetrics/app-usage-events-emitter-react/compare/v1.0.0...v1.0.1) (2023-07-16)
 
 
