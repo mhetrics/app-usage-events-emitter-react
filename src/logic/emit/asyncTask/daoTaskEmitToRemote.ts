@@ -39,7 +39,9 @@ const findByUnique: AsyncTaskEmitToRemoteDao['findByUnique'] = async ({
   const cacheKey = getCacheKey({ endpoint, payload });
   const cachedValue = await cache.get(cacheKey);
   if (!cachedValue) return null;
-  return deserialize(cachedValue, { with: [AsyncTaskEmitToRemote] }) ?? null;
+  return new AsyncTaskEmitToRemote(
+    JSON.parse(cachedValue),
+  ) as HasMetadata<AsyncTaskEmitToRemote>;
 };
 
 /**
@@ -54,10 +56,11 @@ const findAllByStatus: AsyncTaskEmitToRemoteDao['findAllByStatus'] = async ({
   const keysAll = await cache.keys();
   const tasksAll = (await Promise.all(keysAll.map((key) => cache.get(key))))
     .filter(isPresent)
-    .map((taskJSON) =>
-      deserialize<HasMetadata<AsyncTaskEmitToRemote>>(taskJSON, {
-        with: [AsyncTaskEmitToRemote],
-      }),
+    .map(
+      (taskJSON) =>
+        new AsyncTaskEmitToRemote(
+          JSON.parse(taskJSON),
+        ) as HasMetadata<AsyncTaskEmitToRemote>,
     );
   const tasksMatching = tasksAll.filter((task) => status.includes(task.status));
   return tasksMatching;
