@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.5...v1.1.6) (2023-07-28)
+
+
+### Bug Fixes
+
+* **dao:** json.parse instead of deserialize to support minification ([57f4731](https://github.com/mhetrics/app-usage-events-react/commit/57f47311a829e88eb2b1f453e62c1ff8f0a888b6))
+
 ## [1.1.5](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.4...v1.1.5) (2023-07-25)
 
 
