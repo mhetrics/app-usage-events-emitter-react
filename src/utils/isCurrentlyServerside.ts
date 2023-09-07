@@ -1,1 +1,2 @@
-export const isCurrentlyServerSide = () => typeof window === 'undefined';
+export const isCurrentlyServerSide = (): boolean =>
+  typeof window === 'undefined';
