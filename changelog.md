@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.7](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.6...v1.1.7) (2023-09-07)
+
+
+### Bug Fixes
+
+* **observation:** warn without error on observations without sessions ([a4cac62](https://github.com/mhetrics/app-usage-events-react/commit/a4cac62e9c41b24c4010f36a97446283acd74fa7))
+* **practs:** bump to latest best practs ([ab32680](https://github.com/mhetrics/app-usage-events-react/commit/ab32680fa18d92a6e9f49e98ddbf4f3e51aea14a))
+
 ## [1.1.6](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.5...v1.1.6) (2023-07-28)
 
 
