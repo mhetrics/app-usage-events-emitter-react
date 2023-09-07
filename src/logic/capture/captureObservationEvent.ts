@@ -21,7 +21,27 @@ export const captureObservationEvent = async ({
   details: AppUsageEvent['details'];
 }) => {
   if (typeof window === 'undefined') return; // do nothing on serverside, since no installation-uuid available
-  await waitForApplicationOfSession();
+
+  // wait for the app session to be loaded
+  try {
+    await waitForApplicationOfSession();
+  } catch (error) {
+    if (!(error instanceof Error)) throw error;
+
+    // if the error was due to not having the app session, then just warn and exit. dont pass up the error
+    if (error.message.includes('application wait attempts exceeded')) {
+      console.warn(
+        'could not capture observation event, app.session was not instantiated. was the AppUsageEventProvider loaded?',
+        { type, details },
+      );
+      return;
+    }
+
+    // otherwise, pass up the error since we dont know what to do with it
+    throw error;
+  }
+
+  // capture the event
   await captureAppUsageEvent({
     source: AppUsageEventSource.OBSERVATION,
     type,
