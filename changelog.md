@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.7...v1.1.8) (2023-09-22)
+
+
+### Bug Fixes
+
+* **deps:** bump event-stream-pubsub to latest ([5a2532e](https://github.com/mhetrics/app-usage-events-react/commit/5a2532eaf208f6e659490b469b48b4448c56eec5))
+
 ## [1.1.7](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.6...v1.1.7) (2023-09-07)
 
 
