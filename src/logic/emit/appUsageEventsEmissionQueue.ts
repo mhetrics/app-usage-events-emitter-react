@@ -38,7 +38,7 @@ const isNoisySource = (source: AppUsageEventSource) =>
 
 // also, log out when events are added
 appUsageEventsEmissionQueue.on.push.subscribe({
-  consumer: ({ event: { items } }) =>
+  consumer: ({ items }) =>
     (window as any)?.aue?.log === true && !isNoisySource(items[0]?.source)
       ? console.log(
           APP_USAGE_EVENTS_EMISSION_LOG_FIRST_ARG,
