@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.9](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.8...v1.1.9) (2023-09-22)
+
+
+### Bug Fixes
+
+* **deps:** resolve event-stream pubsub contract change per update ([d349620](https://github.com/mhetrics/app-usage-events-react/commit/d349620edd493c6dc9e0bf1797f205fd50c52e9d))
+
 ## [1.1.8](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.7...v1.1.8) (2023-09-22)
 
 
