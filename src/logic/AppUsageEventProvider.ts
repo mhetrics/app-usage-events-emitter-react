@@ -19,7 +19,7 @@ export const AppUsageEventProvider = ({
   apiKey: string;
   apiHost: string;
   application: AppUsageApplication;
-}): ReactElement => {
+}): ReactElement | null => {
   // set the api credentials
   useEffect(() => {
     if (isCurrentlyServerSide()) return; // do nothing if on serverside
