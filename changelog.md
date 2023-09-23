@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.10](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.9...v1.1.10) (2023-09-23)
+
+
+### Bug Fixes
+
+* **typedef:** change returntype of provider ([de3dc61](https://github.com/mhetrics/app-usage-events-react/commit/de3dc61274083ab6e5a64b0818cf3d9ee1eec08b))
+
 ## [1.1.9](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.8...v1.1.9) (2023-09-22)
 
 
