@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.11](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.10...v1.1.11) (2023-09-23)
+
+
+### Bug Fixes
+
+* **typedef:** resolve tsc issue after returntype update ([fd0df51](https://github.com/mhetrics/app-usage-events-react/commit/fd0df5110352e4e96a0dd8d9a2fe827a3563467f))
+
 ## [1.1.10](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.9...v1.1.10) (2023-09-23)
 
 
