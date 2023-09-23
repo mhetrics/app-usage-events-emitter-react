@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 import { AppUsageApplication } from '../domain/AppUsageApplication';
 import { isCurrentlyServerSide } from '../utils/isCurrentlyServerside';
@@ -19,7 +19,7 @@ export const AppUsageEventProvider = ({
   apiKey: string;
   apiHost: string;
   application: AppUsageApplication;
-}): ReactNode => {
+}): ReactElement => {
   // set the api credentials
   useEffect(() => {
     if (isCurrentlyServerSide()) return; // do nothing if on serverside
