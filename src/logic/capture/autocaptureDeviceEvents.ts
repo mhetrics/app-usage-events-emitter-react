@@ -12,20 +12,20 @@ import { captureAppUsageEvent } from './captureAppUsageEvent';
  */
 export const autocaptureDeviceEvents = withSimpleCaching(
   () => {
-    // device motion events; https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event
-    window.addEventListener('devicemotion', (event) =>
-      event.acceleration?.x || event.acceleration?.y || event.acceleration?.z
-        ? captureAppUsageEvent({
-            source: AppUsageEventSource.DEVICE,
-            type: 'device.motion',
-            details: {
-              acceleration: event.acceleration,
-              accelerationIncludingGravity: event.accelerationIncludingGravity,
-            } as never,
-          })
-        : null,
-    );
-
+    // TODO: re-enable once we find a good way to debounce this input (and probably a usecase for it first)
+    // // device motion events; https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event
+    // window.addEventListener('devicemotion', (event) =>
+    //   event.acceleration?.x || event.acceleration?.y || event.acceleration?.z
+    //     ? captureAppUsageEvent({
+    //         source: AppUsageEventSource.DEVICE,
+    //         type: 'device.motion',
+    //         details: {
+    //           acceleration: event.acceleration,
+    //           accelerationIncludingGravity: event.accelerationIncludingGravity,
+    //         } as never,
+    //       })
+    //     : null,
+    // );
     // TODO: re-enable once we find a good way to debounce this input (and probably a usecase for it first)
     // // device compass events; https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event
     // addEventListener('deviceorientation', (event) =>
