@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.12](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.11...v1.1.12) (2024-03-27)
+
+
+### Bug Fixes
+
+* **autocap:** skip autocapture of motion events ([42bdecb](https://github.com/mhetrics/app-usage-events-react/commit/42bdecb29f044ec248b6666d9e624a004a3a028f))
+
 ## [1.1.11](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.10...v1.1.11) (2023-09-23)
 
 
