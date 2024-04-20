@@ -25,5 +25,11 @@ export const executeTaskEmitToRemote = withAsyncTaskExecutionLifecycleExecute(
   },
   {
     dao: daoTaskEmitToRemote,
+    log: console,
+    options: {
+      attempt: {
+        timeout: { seconds: 1 }, // wait up to 1 seconds before allowing attempted tasks to re-execute, equal to the visibility timeout
+      },
+    },
   },
 );

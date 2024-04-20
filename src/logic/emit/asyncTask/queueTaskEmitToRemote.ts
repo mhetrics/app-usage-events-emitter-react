@@ -1,6 +1,6 @@
 import {
   AsyncTaskStatus,
-  withAsyncTaskExecutionLifecycleQueue,
+  withAsyncTaskExecutionLifecycleEnqueue,
 } from 'simple-async-tasks';
 import { createQueueWithResilientRemoteConsumer } from 'simple-in-memory-queue';
 import { HasMetadata } from 'type-fns';
@@ -22,8 +22,8 @@ export const asyncTaskEmitToRemoteQueue =
       pause: 5, // pause all consumption if 5 tasks in a row fail
     },
     delay: {
-      retry: 100,
-      visibility: 100,
+      retry: 1000,
+      visibility: 1000,
     },
     on: {
       failureAttempt: ({ item, attempt, error }) =>
@@ -47,7 +47,7 @@ export const asyncTaskEmitToRemoteQueue =
     },
   });
 
-export const queueTaskEmitToRemote = withAsyncTaskExecutionLifecycleQueue({
+export const queueTaskEmitToRemote = withAsyncTaskExecutionLifecycleEnqueue({
   dao: daoTaskEmitToRemote,
   queue: asyncTaskEmitToRemoteQueue,
   getNew: ({ endpoint, payload }) =>
@@ -57,4 +57,5 @@ export const queueTaskEmitToRemote = withAsyncTaskExecutionLifecycleQueue({
       bytes: new Blob([payload]).size, // https://stackoverflow.com/a/52254083/3068233
       payload,
     }),
+  log: console,
 });
