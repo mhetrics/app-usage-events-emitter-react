@@ -44,9 +44,7 @@ export const findOrCreateAppUsageSession = withSimpleCaching(
     // check if a session exists already
     const sessionFoundJSON = localStorage.getItem(SESSION_STORAGE_KEY);
     const sessionFound = sessionFoundJSON
-      ? (deserialize(sessionFoundJSON, {
-          with: [AppUsageSession],
-        }) as AppUsageSession)
+      ? (new AppUsageSession(JSON.parse(sessionFoundJSON)) as AppUsageSession)
       : null;
     const sessionLastUsedAtJSON = localStorage.getItem(SESSION_LAST_USE_KEY);
     const sessionLastUsedAt = sessionLastUsedAtJSON
