@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.14](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.13...v1.1.14) (2024-04-20)
+
+
+### Bug Fixes
+
+* **emit:** re-attempt emission tasks in attempted state ([0dcf206](https://github.com/mhetrics/app-usage-events-react/commit/0dcf206a971218a89718d597efcbe62cdb9a01da))
+
 ## [1.1.13](https://github.com/mhetrics/app-usage-events-react/compare/v1.1.12...v1.1.13) (2024-04-20)
 
 
